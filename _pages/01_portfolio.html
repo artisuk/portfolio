@@ -1,0 +1,51 @@
+---
+layout: page
+title: Portfolio
+permalink: /
+---
+<script>
+function ShowHide( show )
+{
+	var gameobj = document.getElementsByName("game");
+	
+	if( show === '' )
+	{
+		for( var i = 0, max = gameobj.length; i < max; ++i ) 
+		{
+			gameobj[ i ].style.width = "300px";
+			gameobj[ i ].style.height = "300px";
+			//gameobj[ i ].style.visibility = "visible";
+		}
+	} else {
+		for( var i = 0, max = gameobj.length; i < max; ++i ) 
+		{
+			console.log("doing something");
+			if( gameobj[ i ].classList.contains( show ) )
+			{
+				gameobj[ i ].style.width = "300px";
+				gameobj[ i ].style.height = "300px";
+				//gameobj[ i ].style.visibility = "visible";
+			}
+			else
+			{
+				gameobj[ i ].style.width = "0px";
+				gameobj[ i ].style.height = "0px";
+				//gameobj[ i ].style.visibility = "hidden";
+			}
+		}
+	}
+}
+</script>
+
+<h4>Filters</h4>
+<input type="button" value="All" onclick="ShowHide('');" />
+<input type="button" value="uni" onclick="ShowHide('uni');" />
+<input type="button" value="ggj" onclick="ShowHide('ggj');" />
+<input type="button" value="released" onclick="ShowHide('released');" />
+
+<h4>Games</h4>
+{% for game in site.posts %}
+		<a href={{ game.url | prepend: site.baseurl }}> 
+			<img name="game" class="{{ game.category }}" src="{{ game.resources }}preview.png" alt={{ game.title }} style="width:300px; height:300px;"/>
+		</a>
+{% endfor %}
