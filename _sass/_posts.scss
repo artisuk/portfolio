@@ -1,0 +1,16 @@
+
+
+img{
+-webkit-transform:scale(0.9); /*Webkit: Scale down image to 0.6x original size*/
+-moz-transform:scale(0.9); /*Mozilla scale version*/
+-o-transform:scale(0.9); /*Opera scale version*/
+-webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
+-moz-transition-duration: 0.5s; /*Mozilla duration version*/
+-o-transition-duration: 0.5s; /*Opera duration version*/
+}
+
+img:hover{
+-webkit-transform:scale(1.0); /*Webkit: Scale up image to most of the original size*/
+-moz-transform:scale(1.0); /*Mozilla scale version*/
+-o-transform:scale(1.0); /*Opera scale version*/
+}

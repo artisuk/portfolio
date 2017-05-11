@@ -1,8 +1,9 @@
 ---
 layout: 		post
+status:			"shown"
 title:  		"DWEL"
 date:   		2014-05-23 12:00:00 +0000
 category: 		"game uni"
-resources:		"games_resources/dwel/"
+thumbnail:		"assets/posts/dwel/preview.png"
 ---
 This is the DWEL page.

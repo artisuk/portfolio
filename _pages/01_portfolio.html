@@ -13,8 +13,6 @@ function ShowHide( show )
 		for( var i = 0, max = gameobj.length; i < max; ++i ) 
 		{
 			gameobj[ i ].style.width = "300px";
-			//gameobj[ i ].style.height = "300px";
-			//gameobj[ i ].style.visibility = "visible";
 		}
 	} else {
 		for( var i = 0, max = gameobj.length; i < max; ++i ) 
@@ -23,19 +21,17 @@ function ShowHide( show )
 			if( gameobj[ i ].classList.contains( show ) )
 			{
 				gameobj[ i ].style.width = "300px";
-				//gameobj[ i ].style.height = "300px";
-				//gameobj[ i ].style.visibility = "visible";
 			}
 			else
 			{
 				gameobj[ i ].style.width = "0px";
-				//gameobj[ i ].style.height = "0px";
-				//gameobj[ i ].style.visibility = "hidden";
 			}
 		}
 	}
 }
 </script>
+
+<link rel="stylesheet" href="/css/posts.css">
 
 <h4>Filters</h4>
 <input type="button" value="All" onclick="ShowHide('');" />
@@ -45,7 +41,9 @@ function ShowHide( show )
 
 <h4>Games</h4>
 {% for game in site.posts %}
-		<a href={{ game.url | prepend: site.baseurl }}> 
-			<img name="game" class="{{ game.category }}" src="{{ game.resources }}preview.png" alt={{ game.title }} style="width:300px; height:auto;"/>
+	{% if game.status == "shown" %}
+		<a href={{ game.url | prepend: site.baseurl }} style="width:0px;height:0px;" >
+			<img name="game" class="{{ game.category }}" src="{{ game.thumbnail }}" alt={{ game.title }} style="width:300px; height:auto;"/>
 		</a>
+	{% endif %}
 {% endfor %}
