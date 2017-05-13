@@ -12,16 +12,16 @@ thumbnail:		"assets/posts/dwel/preview.jpg"
   <a href="#" class="control_prev"></a>
   <ul>
     <li>
-		<img src="{{ '/assets/posts/dwel/screenshots/pic1.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/dwel/screenshots/pic1.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/dwel/screenshots/pic2.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/dwel/screenshots/pic2.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/dwel/screenshots/pic3.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/dwel/screenshots/pic3.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/dwel/screenshots/pic4.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/dwel/screenshots/pic4.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
   </ul>  
 </div>

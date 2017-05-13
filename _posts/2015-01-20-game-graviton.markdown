@@ -12,28 +12,28 @@ thumbnail:		"assets/posts/graviton/preview.jpg"
   <a href="#" class="control_prev"></a>
   <ul>
     <li>
-		<img src="{{ '/assets/posts/graviton/screenshots/pic1.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/graviton/screenshots/pic1.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/graviton/screenshots/pic2.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/graviton/screenshots/pic2.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/graviton/screenshots/pic3.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/graviton/screenshots/pic3.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/graviton/screenshots/pic4.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/graviton/screenshots/pic4.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/graviton/screenshots/pic5.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/graviton/screenshots/pic5.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/graviton/screenshots/pic6.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/graviton/screenshots/pic6.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/graviton/screenshots/pic7.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/graviton/screenshots/pic7.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/graviton/screenshots/pic8.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/graviton/screenshots/pic8.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
   </ul>  
 </div>

@@ -12,10 +12,13 @@ thumbnail:		"assets/posts/hyperspaceracer/preview.jpg"
   <a href="#" class="control_prev"></a>
   <ul>
     <li>
-		<img src="/assets/posts/hyperspaceracer/screenshots/pic1.png" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="/assets/posts/hyperspaceracer/screenshots/pic1.jpg" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="/assets/posts/hyperspaceracer/screenshots/pic2.png" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="/assets/posts/hyperspaceracer/screenshots/pic2.jpg" alt="Screenshot" style="width:100%; height:auto;"/>
+	</li>
+    <li>
+		<p>Test</p>
 	</li>
   </ul>  
 </div>

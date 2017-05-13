@@ -12,16 +12,16 @@ thumbnail:		"assets/posts/bossfighter/preview.jpg"
   <a href="#" class="control_prev"></a>
   <ul>
     <li>
-		<img src="{{ '/assets/posts/bossfighter/screenshots/pic1.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/bossfighter/screenshots/pic1.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/bossfighter/screenshots/pic2.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/bossfighter/screenshots/pic2.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/bossfighter/screenshots/pic3.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/bossfighter/screenshots/pic3.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
     <li>
-		<img src="{{ '/assets/posts/bossfighter/screenshots/pic4.png' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		<img src="{{ '/assets/posts/bossfighter/screenshots/pic4.jpg' | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
 	</li>
   </ul>  
 </div>
