@@ -1,3 +1,9 @@
+# jekyll serve --config _config.yml,_config_dev.yml
+# 
+# git add .
+# git commit -am "Initial commit"
+# git push origin gh-pages
+#
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
