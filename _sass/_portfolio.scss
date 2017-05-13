@@ -12,3 +12,8 @@ img:hover{
 -moz-transform:scale(1.0); /*Mozilla scale version*/
 -o-transform:scale(1.0); /*Opera scale version*/
 }
+
+div-game.div{
+-webkit-transition: top 1s;
+-webkit-transition: left 1s;
+}

@@ -6,29 +6,49 @@ permalink: /
 <script>
 function ShowHide( show )
 {
-	var gameobj = document.getElementsByName("game");
+	var container = document.getElementsByName( "img-container" )[ 0 ];
+	var gameobj = container.querySelectorAll( "div" );
+	var validobj = [];
 	
-	if( show === '' )
+	for( var i = 0, max = gameobj.length; i < max; ++i ) 
 	{
-		for( var i = 0, max = gameobj.length; i < max; ++i ) 
+		var aobj = gameobj[ i ].querySelectorAll( "a" )[ 0 ];
+		var imgobj = aobj.querySelectorAll( "img" )[ 0 ];
+		
+		if( show == '' || imgobj.classList.contains( show ) )
 		{
+			gameobj[ i ].style.height = "300px";
 			gameobj[ i ].style.width = "300px";
+			imgobj.style.width = "300px";
+			validobj.push( gameobj[ i ] );
 		}
-	} else {
-		for( var i = 0, max = gameobj.length; i < max; ++i ) 
+		else
 		{
-			console.log("doing something");
-			if( gameobj[ i ].classList.contains( show ) )
-			{
-				gameobj[ i ].style.width = "300px";
-			}
-			else
-			{
-				gameobj[ i ].style.width = "0px";
-			}
+			gameobj[ i ].style.height = "0px";
+			gameobj[ i ].style.width = "0px";
+			imgobj.style.width = "0px";
 		}
 	}
+	
+	var perLine = Math.floor( container.offsetWidth / 300 );
+	
+	container.style.height = ( 300 * Math.ceil( validobj.length / perLine ) ) + "px";
+	
+	for( var i = 0, max = validobj.length; i < max; ++i ) 
+	{
+		var l = validobj[ i ].style.left;
+		var t = validobj[ i ].style.top;
+		validobj[ i ].style.left = ( 300 * ( i % perLine ) ).toString() + "px";
+		validobj[ i ].style.top = ( 300 * Math.floor( i / perLine ) ).toString() + "px";
+	}
 }
+
+function OnLoad(e)
+{
+	ShowHide('');
+}
+
+window.addEventListener("load", OnLoad, false);
 </script>
 
 <link rel="stylesheet" href="{{ '/css/portfolio.css' | prepend: site.baseurl }}">
@@ -40,10 +60,14 @@ function ShowHide( show )
 <input type="button" value="released" onclick="ShowHide('released');" />
 
 <h4>Games</h4>
-{% for game in site.posts %}
-	{% if game.status == "shown" %}
-		<a href={{ game.url | prepend: site.baseurl }} style="width:0px;height:0px;" >
-			<img name="game" class="{{ game.category }}" src="{{ game.thumbnail }}" alt={{ game.title }} style="width:300px; height:auto;"/>
-		</a>
-	{% endif %}
-{% endfor %}
+<div id="img-container" name="img-container" style="position:relative; height:100px;">
+	{% for game in site.posts %}
+		{% if game.status == "shown" %}
+			<div name="div-game" class="div-game" style="width:300px; height:300px; position:absolute;-webkit-transition: all 1s;">
+				<a name="a-game" href={{ game.url | prepend: site.baseurl }} >
+					<img name="img-game" class="{{ game.category }}" src="{{ game.thumbnail }}" alt="{{ game.title }}" style="width:0px; height:auto; position:absolute; margin:auto; top:0; left:0; right:0; bottom:0;" vertical-align=100px/>
+				</a>
+			</div>
+		{% endif %}
+	{% endfor %}
+</div>
