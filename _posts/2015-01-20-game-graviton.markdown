@@ -4,7 +4,7 @@ status:			"shown"
 title:  		"Graviton"
 date:   		2015-01-20 12:00:00 +0000
 category: 		"game ggj"
-thumbnail:		"assets/posts/graviton/preview.png"
+thumbnail:		"assets/posts/graviton/preview.jpg"
 ---
 
 <div id="slider">

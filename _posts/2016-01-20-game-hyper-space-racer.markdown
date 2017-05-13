@@ -4,7 +4,7 @@ status:			"shown"
 title:  		"Hyper Space Racer"
 date:   		2016-01-20 12:00:00 +0000
 category: 		"game ggj"
-thumbnail:		"assets/posts/hyperspaceracer/preview.png"
+thumbnail:		"assets/posts/hyperspaceracer/preview.jpg"
 ---
 
 <div id="slider">

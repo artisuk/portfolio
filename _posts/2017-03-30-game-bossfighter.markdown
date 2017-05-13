@@ -4,7 +4,7 @@ status:			"shown"
 title:  		"Boss Fighter"
 date:   		2017-03-30 12:00:00 +0000
 category: 		"game uni released"
-thumbnail:		"assets/posts/bossfighter/preview.png"
+thumbnail:		"assets/posts/bossfighter/preview.jpg"
 ---
 
 <div id="slider">

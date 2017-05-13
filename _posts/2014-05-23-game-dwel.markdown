@@ -4,7 +4,7 @@ status:			"shown"
 title:  		"DWEL"
 date:   		2014-05-23 12:00:00 +0000
 category: 		"game uni"
-thumbnail:		"assets/posts/dwel/preview.png"
+thumbnail:		"assets/posts/dwel/preview.jpg"
 ---
 
 <div id="slider">
