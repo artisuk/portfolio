@@ -9,18 +9,19 @@ function ShowHide( show )
 	var container = document.getElementsByName( "img-container" )[ 0 ];
 	var gameobj = container.querySelectorAll( "div" );
 	var validobj = [];
+	var validimg = [];
 	
 	for( var i = 0, max = gameobj.length; i < max; ++i ) 
 	{
 		var aobj = gameobj[ i ].querySelectorAll( "a" )[ 0 ];
 		var imgobj = aobj.querySelectorAll( "img" )[ 0 ];
-		
 		if( show == '' || imgobj.classList.contains( show ) )
 		{
 			gameobj[ i ].style.height = "300px";
 			gameobj[ i ].style.width = "300px";
 			imgobj.style.width = "300px";
 			validobj.push( gameobj[ i ] );
+			validimg.push( imgobj );
 		}
 		else
 		{
@@ -32,15 +33,21 @@ function ShowHide( show )
 	
 	var perLine = Math.floor( container.offsetWidth / 300 );
 	
-	container.style.height = ( 300 * Math.ceil( validobj.length / perLine ) ) + "px";
-	
-	for( var i = 0, max = validobj.length; i < max; ++i ) 
+	var topPoint = 0;
+	for( var i = 0, max = validobj.length; i < max; i += perLine ) 
 	{
-		var l = validobj[ i ].style.left;
-		var t = validobj[ i ].style.top;
-		validobj[ i ].style.left = ( 300 * ( i % perLine ) ).toString() + "px";
-		validobj[ i ].style.top = ( 300 * Math.floor( i / perLine ) ).toString() + "px";
+		for( var u = i; u < Math.min( max, i + perLine ); ++u )
+		{
+			var obj = validobj[ u ];
+			
+			obj.style.left = ( 300 * ( u % perLine ) ).toString() + "px";
+			obj.style.top = ( topPoint ).toString() + "px";
+		}
+		
+		topPoint += 300;
 	}
+	
+	container.style.height = ( topPoint ) + "px";
 }
 
 function OnLoad(e)
@@ -54,16 +61,24 @@ window.addEventListener("load", OnLoad, false);
 <link rel="stylesheet" href="{{ '/css/portfolio.css' | prepend: site.baseurl }}">
 
 <h4>Filters</h4>
-<input type="button" value="All" onclick="ShowHide('');" />
-<input type="button" value="uni" onclick="ShowHide('uni');" />
-<input type="button" value="ggj" onclick="ShowHide('ggj');" />
-<input type="button" value="released" onclick="ShowHide('released');" />
+<div>
+<input type="checkbox" name="filter" value="uni"		checked>University</input>
+<input type="checkbox" name="filter" value="released" 	checked>Released
+<input type="checkbox" name="filter" value="ggj">				Global Game Jam
+</div>
+
+<div>
+<input type="button" value="All" 				onclick="ShowHide('');" />
+<input type="button" value="University" 		onclick="ShowHide('uni');" />
+<input type="button" value="Released" 			onclick="ShowHide('released');" />
+<input type="button" value="Global Game Jam" 	onclick="ShowHide('ggj');" />
+</div>
 
 <h4>Games</h4>
-<div id="img-container" name="img-container" style="position:relative; height:100px;">
+<div id="img-container" name="img-container" style="position:relative; height:300px;-webkit-transition: height 1s;">
 	{% for game in site.posts %}
 		{% if game.status == "shown" %}
-			<div name="div-game" class="div-game" style="width:300px; height:300px; position:absolute;-webkit-transition: all 1s;">
+			<div name="div-game" class="div-game" style="width:'300px'; height:'300px'; position:absolute;-webkit-transition: all 1s;">
 				<a name="a-game" href={{ game.url | prepend: site.baseurl }} >
 					<img name="img-game" class="{{ game.category }}" src="{{ game.thumbnail }}" alt="{{ game.title }}" style="width:0px; height:auto; position:absolute; margin:auto; top:0; left:0; right:0; bottom:0;" vertical-align=100px/>
 				</a>
