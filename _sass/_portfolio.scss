@@ -1,19 +1,90 @@
 img{
--webkit-transform:scale(0.9); /*Webkit: Scale down image to 0.6x original size*/
--moz-transform:scale(0.9); /*Mozilla scale version*/
--o-transform:scale(0.9); /*Opera scale version*/
--webkit-transition-duration: 0.5s; /*Webkit: Animation duration*/
--moz-transition-duration: 0.5s; /*Mozilla duration version*/
--o-transition-duration: 0.5s; /*Opera duration version*/
+	transition:	all 1s;
+	transform:	scale(0.9);
+	
+	filter: 	blur(2px) brightness(70%);
 }
 
 img:hover{
--webkit-transform:scale(1.0); /*Webkit: Scale up image to most of the original size*/
--moz-transform:scale(1.0); /*Mozilla scale version*/
--o-transform:scale(1.0); /*Opera scale version*/
+	transform:	scale(1.0);
+	
+	filter: 	blur(0px) brightness(100%);
 }
 
-div-game.div{
--webkit-transition: top 1s;
--webkit-transition: left 1s;
+div#img-container{
+	transition:	height 1s;
+	
+	position:	relative;
+	height:		300px;
+
+	div.div-game{
+		transition:	all 1s;
+		
+		position:	absolute;
+		
+		a{
+			img{
+				height:		auto;
+				position:	absolute;
+				margin:		auto;
+				top:		0;
+				left:		0;
+				right:		0;
+				bottom:		0;
+			}
+			
+
+			img:hover + p{
+				opacity:	0.0;
+				top: 		20%;
+			}
+		}
+				
+		p{
+			transition:	all 1s;
+			
+			pointer-events: 	none;
+			position:			absolute;
+			font-size:			1.0vw;
+			color:				red;
+			top:				40%;
+			left:				0%;
+			width:				100%;
+			text-align:			center;
+		}
+	}
+	
+	div.div-game.show{
+		width:		300px;
+		height:		300px;
+		a{
+			img{
+				width:		300px;
+			}
+			
+			img:hover + p{
+			}
+		}
+		
+		p{
+			font-size:			1.0vw;
+		}
+	}
+	
+	div.div-game:not(show){
+		width:		0px;
+		height:		0px;
+		a{
+			img{
+				width:		000px;
+			}
+			
+			img:hover + p{
+			}
+		}
+		
+		p{
+			font-size:			0.0vw;
+		}
+	}
 }
