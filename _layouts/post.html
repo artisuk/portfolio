@@ -6,6 +6,133 @@ layout: default
 <script src="{{ '/js/image_slider.js' | prepend: site.baseurl }}"></script>
 
 <h2>{{ page.title }}</h2>
-<h3>{{ page.date }}</h3>
+<!--<h3>{{ page.date }}</h3>-->
 
-    {{ content }}
+<!--{{ content }}-->
+
+<!--<p>Release date: {{ page.release-date }}</>-->
+<style>
+div.slideshow{
+	border:					2px solid black;
+	width:					48.0vw;
+	height:					27.0vw;
+	
+	background-color:		blue;
+}
+
+div.main{
+	border:				2px solid black;
+	width:				100%;
+	height:				70%;
+	
+	background-color:	red;
+}
+
+div.preview-container{
+	border:				2px solid black;
+	width:				100%;
+	height:				30%;
+	<!--overflow:			hidden;-->
+	
+	background-color:	green;
+}
+
+div.thumbnail{
+	border:			2px solid black;
+	width:			25%;
+	height:			100%;
+	float:			left;
+}
+
+img.slideshow-image{
+	transition: opacity 0.25s;
+
+	width:			100%;
+	height:			100%;
+	object-fit:		contain;
+	float:			left;
+}
+img.slideshow-image.show{
+	opacity:		1;
+}
+img.slideshow-image.hide{
+	opacity:		0;
+}
+
+img.thumbnail-image{
+	width:			100%;
+	height:			100%;
+	object-fit:		contain;
+	cursor:			pointer;
+}
+</style>
+<script>
+function ShowScreenshot( screenshot ) 
+{
+	var slideshows = document.getElementsByClassName( "slideshow-image" );
+	var image_show;
+	var image_hide;
+	
+	if( slideshows[ 0 ].classList.contains( "show" ) )
+	{
+		image_show = slideshows[ 0 ];
+		image_hide = slideshows[ 1 ];
+	} else {
+		image_show = slideshows[ 1 ];
+		image_hide = slideshows[ 0 ];
+	}
+	
+	if( image_show.src.includes( screenshot ) )
+		return;
+	
+	image_hide.src = screenshot;
+	
+	image_show.classList.remove( "show" );
+	image_show.classList.add( "hide" );
+	
+	image_hide.classList.remove( "hide" );
+	image_hide.classList.add( "show" );
+}
+
+function OnLoad(e)
+{
+	var previewContainer = document.getElementsByClassName( "preview-container" )[ 0 ];
+	var firstElement = previewContainer.firstElementChild.firstElementChild;
+	
+	console.log( firstElement );
+	firstElement.onclick.apply( firstElement );
+	
+}
+
+window.addEventListener("load", OnLoad, false);
+</script>
+
+<div class="slideshow">
+	<div class="main">
+		<img class="slideshow-image" src="{{ page.screenshots[0] | prepend: site.baseurl }}" alt="MainScreenshot"/>
+	</div>
+	<div class="preview-container">
+	{% for video in page.video %}
+		
+	{% endfor %}
+	{% for screenshot in page.screenshots %}
+		<div class="thumbnail" style="background-color:black; ">
+			<img class="thumbnail-image" src="{{ screenshot | prepend: site.baseurl }}" alt="Thumbnail" onclick="ShowScreenshot( '{{ screenshot | prepend: site.baseurl }}' )"/>
+		</div>
+	{% endfor %}
+	</div>
+</div>
+
+<!--
+<div id="slider">
+	<a href="#" class="control_next"></a>
+	<a href="#" class="control_prev"></a>
+	<ul>
+	{% for f in page.screenshots %}
+		<li>
+			<img src="{{ f | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
+		</li>
+	{% endfor %}
+	</ul>
+</div>
+-->

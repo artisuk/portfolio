@@ -39,7 +39,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-permalink:        /blog/:year/:month/:day/:title/
+permalink:        /blog/:year-:month-:day/:title/
 
 sass:
   sass_dir: _sass

@@ -1,10 +1,14 @@
 ---
 layout: 		post
-status:			"shown"
+published:		true
 title:  		"Magnitude"
 date:   		2015-03-21 12:00:00 +0000
 category: 		"game uni"
 thumbnail:		"assets/posts/magnitude/preview.jpg"
+screenshots:	[
+					'/assets/posts/magnitude/screenshots/pic1.jpg',
+					'/assets/posts/magnitude/screenshots/pic2.jpg'
+				]
 ---
 
 <div id="slider">

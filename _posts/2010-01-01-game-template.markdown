@@ -1,10 +1,14 @@
 ---
 layout: 		post
-status:			"shown"
+published:		true
 title:			"Boss Fighter"
 date:			2010-01-01 12:00:00 +0000
 category: 		"game uni released"
 thumbnail:		"assets/posts/checker.jpg"
+screenshots:	[
+					'/assets/posts/checker.jpg',
+					'/assets/posts/checker.jpg'
+				]
 ---
 
 <div id="slider">

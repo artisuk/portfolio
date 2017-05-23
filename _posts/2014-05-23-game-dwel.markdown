@@ -1,10 +1,16 @@
 ---
 layout: 		post
-status:			"shown"
+published:		true
 title:  		"DWEL"
 date:   		2014-05-23 12:00:00 +0000
 category: 		"game uni"
 thumbnail:		"assets/posts/dwel/preview.jpg"
+screenshots:	[
+					'/assets/posts/dwel/screenshots/pic1.jpg',
+					'/assets/posts/dwel/screenshots/pic2.jpg',
+					'/assets/posts/dwel/screenshots/pic3.jpg',
+					'/assets/posts/dwel/screenshots/pic4.jpg'
+				]
 ---
 
 <div id="slider">

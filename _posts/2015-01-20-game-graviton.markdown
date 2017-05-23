@@ -1,10 +1,20 @@
 ---
 layout: 		post
-status:			"shown"
+published:		true
 title:  		"Graviton"
 date:   		2015-01-20 12:00:00 +0000
 category: 		"game ggj"
 thumbnail:		"assets/posts/graviton/preview.jpg"
+screenshots:	[
+					'/assets/posts/graviton/screenshots/pic1.jpg',
+					'/assets/posts/graviton/screenshots/pic2.jpg',
+					'/assets/posts/graviton/screenshots/pic3.jpg',
+					'/assets/posts/graviton/screenshots/pic4.jpg',
+					'/assets/posts/graviton/screenshots/pic5.jpg',
+					'/assets/posts/graviton/screenshots/pic6.jpg',
+					'/assets/posts/graviton/screenshots/pic7.jpg',
+					'/assets/posts/graviton/screenshots/pic8.jpg'
+				]
 ---
 
 <div id="slider">
