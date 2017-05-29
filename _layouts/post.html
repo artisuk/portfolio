@@ -24,6 +24,7 @@ div.main{
 	border:				2px solid black;
 	width:				100%;
 	height:				70%;
+	position:			relative;
 	
 	background-color:	red;
 }
@@ -32,6 +33,7 @@ div.preview-container{
 	border:				2px solid black;
 	width:				100%;
 	height:				30%;
+	position:			relative;
 	<!--overflow:			hidden;-->
 	
 	background-color:	green;
@@ -42,6 +44,8 @@ div.thumbnail{
 	width:			25%;
 	height:			100%;
 	float:			left;
+	
+	transition:		left 0.2s;
 }
 
 img.slideshow-image{
@@ -65,11 +69,47 @@ img.thumbnail-image{
 	object-fit:		contain;
 	cursor:			pointer;
 }
+
+button.side-button{
+	position:		absolute;
+	cursor:			pointer;
+	border:			none;
+	display:		inline-block;
+	outline:		0;
+	padding:		16px 16px;
+	vertical-align:	middle;
+	color:			black;
+	text-align:		center;
+	white-space:	nowrap;
+	opacity:		0.5;
+}
+
+button.side-button.slideshow-button{
+	top:			40%;
+	bottom:			40%;
+	height:			20%;
+}
+
+button.side-button.preview-button{
+	top:			30%;
+	bottom:			30%;
+	height:			40%;
+}
+
+button.side-button.button-left{
+	left:			0%;
+}
+
+button.side-button.button-right{
+	right:			0%;
+}
 </style>
 <script>
 function ShowScreenshot( screenshot ) 
 {
-	var slideshows = document.getElementsByClassName( "slideshow-image" );
+	var slideshows = document.getElementsByClassName( "slideshow-image" )[ 0 ];
+	slideshows.src = screenshot;
+	/*
 	var image_show;
 	var image_hide;
 	
@@ -92,6 +132,23 @@ function ShowScreenshot( screenshot )
 	
 	image_hide.classList.remove( "hide" );
 	image_hide.classList.add( "show" );
+	*/
+}
+
+function MovePreview( move )
+{
+	var slideshows = document.getElementsByClassName( "thumbnail" );
+	
+	var arrayLength = slideshows.length;
+	for( var i = 0; i < arrayLength; ++i ) 
+	{
+		var left = parseFloat( slideshows[ i ].style.left );
+		console.log(left);
+		left = left + ( 25 * move );
+		console.log(left);
+		slideshows[ i ].style.left = ( left ).toString() + "%";
+		console.log(slideshows[ i ].style.left);
+	}
 }
 
 function OnLoad(e)
@@ -99,8 +156,8 @@ function OnLoad(e)
 	var previewContainer = document.getElementsByClassName( "preview-container" )[ 0 ];
 	var firstElement = previewContainer.firstElementChild.firstElementChild;
 	
-	console.log( firstElement );
-	firstElement.onclick.apply( firstElement );
+	//console.log( firstElement );
+	//firstElement.onclick.apply( firstElement );
 	
 }
 
@@ -109,17 +166,25 @@ window.addEventListener("load", OnLoad, false);
 
 <div class="slideshow">
 	<div class="main">
+		<button class="side-button slideshow-button button-left" onclick="plusDivs(-1)">&#10094;</button>
+		<button class="side-button slideshow-button button-right" onclick="plusDivs(-1)">&#10095;</button>
 		<img class="slideshow-image" src="{{ page.screenshots[0] | prepend: site.baseurl }}" alt="MainScreenshot"/>
 	</div>
 	<div class="preview-container">
-	{% for video in page.video %}
-		
-	{% endfor %}
-	{% for screenshot in page.screenshots %}
-		<div class="thumbnail" style="background-color:black; ">
-			<img class="thumbnail-image" src="{{ screenshot | prepend: site.baseurl }}" alt="Thumbnail" onclick="ShowScreenshot( '{{ screenshot | prepend: site.baseurl }}' )"/>
+		<div class="preview-subcontainer">
+		{% for video in page.video %}
+			<div class="thumbnail" style="background-color:black; left:{{ leftoffset }}%; position: absolute;">
+			</div>
+		{% endfor %}
+		{% for screenshot in page.screenshots %}
+			{% assign leftoffset = forloop.index0 | times:25 %}
+			<div class="thumbnail" style="background-color:black; left:{{ leftoffset }}%; position: absolute;">
+				<img class="thumbnail-image" src="{{ screenshot | prepend: site.baseurl }}" alt="Thumbnail" onclick="ShowScreenshot( '{{ screenshot | prepend: site.baseurl }}' )"/>
+			</div>
+		{% endfor %}
 		</div>
-	{% endfor %}
+		<button class="side-button preview-button button-left" onclick="MovePreview(-1)">&#10094;</button>
+		<button class="side-button preview-button button-right" onclick="MovePreview(1)">&#10095;</button>
 	</div>
 </div>
 
