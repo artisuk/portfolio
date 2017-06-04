@@ -4,13 +4,13 @@ img{
 	transition:		all $transition-type;
 	transform:		scale(0.9);
 	
-	filter: 		blur(2px) brightness(70%);
+	filter: 		brightness(30%);
 }
 
 img:hover{
 	transform:		scale(1.0);
 	
-	filter: 		blur(0px) brightness(100%);
+	filter: 		brightness(100%);
 }
 
 div#img-container{
@@ -48,7 +48,7 @@ div#img-container{
 			pointer-events: 	none;
 			position:			absolute;
 			font-size:			1.0vw;
-			color:				red;
+			color:				white;
 			top:				40%;
 			left:				0%;
 			width:				100%;

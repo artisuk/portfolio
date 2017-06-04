@@ -111,10 +111,10 @@ layout: default
 
 <br/>
 
-{% if page.link %}
+{% if page.links %}
 	<h3>Links</h3>
 	{% for link in page.links %}
-		<p>{{ link.name }} &#10095; <a href="{{ link.link }}">{{ link.display-link }}</a></p>
+		<p>{{ link.name }} &#10095; <a class="link-link" href="{{ link.link }}">{{ link.display-link }}</a></p>
 	{% endfor %}
 
 	<br/>

@@ -38,6 +38,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - submit.sh
 
 permalink:        /blog/:year-:month-:day/:title/
 

@@ -1,10 +1,29 @@
 ---
-layout: 		post
-published:		true
-title:  		"DWEL"
-date:   		2014-05-23 12:00:00 +0000
-category: 		"game uni"
+layout: 				post
+published:				true
+title:  				'DWEL'
+date:   				2014-05-23 12:00:00 +0000
+category: 				'game uni'
+thumbnail:				'assets/posts/dwel/preview.jpg'
+description:			'Dark With Extra Light<br>
+DWEL was a simple 2d platformer with a unique lighting mechanic. The game had moving platforms, enemies and breaking platforms that would dissapear if no light was present.'
+finished-date:			'May 01, 2014'
+tech:
+ - 'Unity3D'
+workedon:
+ - 'Menu'
+ - 'Movement'
+ - 'Lighting Mechanic'
+ - 'Enemies'
+ - 'Checkpoint System'
+links:
+ - name:				'Download Executable Windows'
+   link:				'https://drive.google.com/file/d/0B_18loem2toJWnN4SHFCYUd4dTg/view?usp=sharing'
+   display-link:		'Google Drive'
 preview:
+ - video: 0
+   thumb-external:		'https://img.youtube.com/vi/hmZWleVsvsQ/1.jpg'
+   preview-youtube:		'https://www.youtube.com/embed/hmZWleVsvsQ'
  - image: 0
    thumb-local:			'/assets/posts/dwel/screenshots/pic1.jpg'
    preview-local:		'/assets/posts/dwel/screenshots/pic1.jpg'
