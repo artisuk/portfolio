@@ -15,6 +15,31 @@ screenshots:	[
 					'/assets/posts/graviton/screenshots/pic7.jpg',
 					'/assets/posts/graviton/screenshots/pic8.jpg'
 				]
+preview:
+ - image: 0
+   thumb-local:			'/assets/posts/graviton/screenshots/pic1.jpg'
+   preview-local:		'/assets/posts/graviton/screenshots/pic1.jpg'
+ - image: 0
+   thumb-local:			'/assets/posts/graviton/screenshots/pic2.jpg'
+   preview-local:		'/assets/posts/graviton/screenshots/pic2.jpg'
+ - image: 0
+   thumb-local:			'/assets/posts/graviton/screenshots/pic3.jpg'
+   preview-local:		'/assets/posts/graviton/screenshots/pic3.jpg'
+ - image: 0
+   thumb-local:			'/assets/posts/graviton/screenshots/pic4.jpg'
+   preview-local:		'/assets/posts/graviton/screenshots/pic4.jpg'
+ - image: 0
+   thumb-local:			'/assets/posts/graviton/screenshots/pic5.jpg'
+   preview-local:		'/assets/posts/graviton/screenshots/pic5.jpg'
+ - image: 0
+   thumb-local:			'/assets/posts/graviton/screenshots/pic6.jpg'
+   preview-local:		'/assets/posts/graviton/screenshots/pic6.jpg'
+ - image: 0
+   thumb-local:			'/assets/posts/graviton/screenshots/pic7.jpg'
+   preview-local:		'/assets/posts/graviton/screenshots/pic7.jpg'
+ - image: 0
+   thumb-local:			'/assets/posts/graviton/screenshots/pic8.jpg'
+   preview-local:		'/assets/posts/graviton/screenshots/pic8.jpg'
 ---
 
 <div id="slider">

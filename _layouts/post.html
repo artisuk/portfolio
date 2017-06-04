@@ -4,6 +4,7 @@ layout: default
 <link rel="stylesheet" href="{{ '/css/post.css' | prepend: site.baseurl }}">
 <script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
 <script src="{{ '/js/image_slider.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/post.js' | prepend: site.baseurl }}"></script>
 
 <h2>{{ page.title }}</h2>
 <!--<h3>{{ page.date }}</h3>-->
@@ -11,193 +12,110 @@ layout: default
 <!--{{ content }}-->
 
 <!--<p>Release date: {{ page.release-date }}</>-->
-<style>
-div.slideshow{
-	border:					2px solid black;
-	width:					48.0vw;
-	height:					27.0vw;
-	
-	background-color:		blue;
-}
-
-div.main{
-	border:				2px solid black;
-	width:				100%;
-	height:				70%;
-	position:			relative;
-	
-	background-color:	red;
-}
-
-div.preview-container{
-	border:				2px solid black;
-	width:				100%;
-	height:				30%;
-	position:			relative;
-	<!--overflow:			hidden;-->
-	
-	background-color:	green;
-}
-
-div.thumbnail{
-	border:			2px solid black;
-	width:			25%;
-	height:			100%;
-	float:			left;
-	
-	transition:		left 0.2s;
-}
-
-img.slideshow-image{
-	transition: opacity 0.25s;
-
-	width:			100%;
-	height:			100%;
-	object-fit:		contain;
-	float:			left;
-}
-img.slideshow-image.show{
-	opacity:		1;
-}
-img.slideshow-image.hide{
-	opacity:		0;
-}
-
-img.thumbnail-image{
-	width:			100%;
-	height:			100%;
-	object-fit:		contain;
-	cursor:			pointer;
-}
-
-button.side-button{
-	position:		absolute;
-	cursor:			pointer;
-	border:			none;
-	display:		inline-block;
-	outline:		0;
-	padding:		16px 16px;
-	vertical-align:	middle;
-	color:			black;
-	text-align:		center;
-	white-space:	nowrap;
-	opacity:		0.5;
-}
-
-button.side-button.slideshow-button{
-	top:			40%;
-	bottom:			40%;
-	height:			20%;
-}
-
-button.side-button.preview-button{
-	top:			30%;
-	bottom:			30%;
-	height:			40%;
-}
-
-button.side-button.button-left{
-	left:			0%;
-}
-
-button.side-button.button-right{
-	right:			0%;
-}
-</style>
-<script>
-function ShowScreenshot( screenshot ) 
-{
-	var slideshows = document.getElementsByClassName( "slideshow-image" )[ 0 ];
-	slideshows.src = screenshot;
-	/*
-	var image_show;
-	var image_hide;
-	
-	if( slideshows[ 0 ].classList.contains( "show" ) )
-	{
-		image_show = slideshows[ 0 ];
-		image_hide = slideshows[ 1 ];
-	} else {
-		image_show = slideshows[ 1 ];
-		image_hide = slideshows[ 0 ];
-	}
-	
-	if( image_show.src.includes( screenshot ) )
-		return;
-	
-	image_hide.src = screenshot;
-	
-	image_show.classList.remove( "show" );
-	image_show.classList.add( "hide" );
-	
-	image_hide.classList.remove( "hide" );
-	image_hide.classList.add( "show" );
-	*/
-}
-
-function MovePreview( move )
-{
-	var slideshows = document.getElementsByClassName( "thumbnail" );
-	
-	var arrayLength = slideshows.length;
-	for( var i = 0; i < arrayLength; ++i ) 
-	{
-		var left = parseFloat( slideshows[ i ].style.left );
-		console.log(left);
-		left = left + ( 25 * move );
-		console.log(left);
-		slideshows[ i ].style.left = ( left ).toString() + "%";
-		console.log(slideshows[ i ].style.left);
-	}
-}
-
-function OnLoad(e)
-{
-	var previewContainer = document.getElementsByClassName( "preview-container" )[ 0 ];
-	var firstElement = previewContainer.firstElementChild.firstElementChild;
-	
-	//console.log( firstElement );
-	//firstElement.onclick.apply( firstElement );
-	
-}
-
-window.addEventListener("load", OnLoad, false);
-</script>
 
 <div class="slideshow">
-	<div class="main">
-		<button class="side-button slideshow-button button-left" onclick="plusDivs(-1)">&#10094;</button>
-		<button class="side-button slideshow-button button-right" onclick="plusDivs(-1)">&#10095;</button>
-		<img class="slideshow-image" src="{{ page.screenshots[0] | prepend: site.baseurl }}" alt="MainScreenshot"/>
+	<div class="top-main">
+		<div class="top-sub full-size">
+			{% for preview in page.preview %}
+				{% assign leftoffset = forloop.index0 | times:25 %}
+				<div class="top-preview full-size {%if forloop.index0==0%}top-preview-show{%endif%}" id="{{ forloop.index0 }}">
+					{% if preview.image %}
+						<img class="top-image full-size" alt="MainScreenshot"
+							{% if preview.preview-local %}
+								src="{{ preview.preview-local | prepend: site.baseurl }}"
+							{% elsif preview.preview-external %}
+								src="{{ preview.preview-external }}"
+							{% endif %}
+						/>
+					{% elsif preview.video %}
+						{% if preview.preview-youtube %}
+							<iframe class="top-video-youtube full-size" src="{{ preview.preview-youtube }}?version=3&enablejsapi=1" frameborder="0" allowscriptaccess="always" allowfullscreen></iframe>
+						{% endif %}
+					{% endif %}
+				</div>
+			{% endfor %}
+		</div>
+		<button class="side-button slideshow-button button-left" onclick="ShowPreview(-1)">&#10094;</button>
+		<button class="side-button slideshow-button button-right" onclick="ShowPreview(1)">&#10095;</button>
 	</div>
-	<div class="preview-container">
-		<div class="preview-subcontainer">
-		{% for video in page.video %}
-			<div class="thumbnail" style="background-color:black; left:{{ leftoffset }}%; position: absolute;">
-			</div>
-		{% endfor %}
-		{% for screenshot in page.screenshots %}
-			{% assign leftoffset = forloop.index0 | times:25 %}
-			<div class="thumbnail" style="background-color:black; left:{{ leftoffset }}%; position: absolute;">
-				<img class="thumbnail-image" src="{{ screenshot | prepend: site.baseurl }}" alt="Thumbnail" onclick="ShowScreenshot( '{{ screenshot | prepend: site.baseurl }}' )"/>
-			</div>
-		{% endfor %}
+	<div class="bottom-main">
+		<div class="bottom-sub full-size">
+			{% for preview in page.preview %}
+				{% assign leftoffset = forloop.index0 | times:25 %}
+				<div class="bottom-thumb" style="left:{{ leftoffset }}%;">
+					<img class="bottom-thumb-image full-size" id="{{ forloop.index0 }}" alt="Thumbnail"
+						{% if preview.thumb-local %}
+							src="{{ preview.thumb-local | prepend: site.baseurl }}"
+						{% elsif preview.thumb-external %}
+							src="{{ preview.thumb-external }}"
+						{% endif %}
+						
+						{% if preview.image %}
+							onclick="Show( {{ forloop.index0 }} )"
+						{% elsif preview.video %}
+							onclick="Show( {{ forloop.index0 }} )"
+						{% endif %}
+					/>
+				</div>
+			{% endfor %}
 		</div>
 		<button class="side-button preview-button button-left" onclick="MovePreview(-1)">&#10094;</button>
 		<button class="side-button preview-button button-right" onclick="MovePreview(1)">&#10095;</button>
 	</div>
 </div>
 
-<!--
-<div id="slider">
-	<a href="#" class="control_next"></a>
-	<a href="#" class="control_prev"></a>
+<h3>Description</h3>
+{% if page.description %}
+	<p>{{ page.description }}</p>
+{% else %}
+	<p>No 'description' tag</p>
+{% endif %}
+
+<br/>
+
+{% if page.release-date %}
+	<h3>Release Date</h3>
+	<p>Released on &#10095; {{ page.release-date }}</p>
+{% elsif page.finished-date %}
+	<h3>Finished Date</h3>
+	<p>Finished on &#10095; {{ page.finished-date }}</p>
+{% else %}
+	<p>No 'release-date' or 'finished-date' tag</p>
+{% endif %}
+
+<br/>
+
+<h3>What I worked on</h3>
+{% if page.workedon %}
 	<ul>
-	{% for f in page.screenshots %}
-		<li>
-			<img src="{{ f | prepend: site.baseurl }}" alt="Screenshot" style="width:100%; height:auto;"/>
-		</li>
-	{% endfor %}
+		{% for responsibility in page.workedon %}
+			<li>{{ responsibility }}</li>
+		{% endfor %}
 	</ul>
-</div>
--->
+{% else %}
+	<p>No 'workedon' list</p>
+{% endif %}
+
+<br/>
+
+<h3>Tools used</h3>
+{% if page.tech %}
+	<ul>
+		{% for tech in page.tech %}
+			<li>{{ tech }}</li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No 'tech' list</p>
+{% endif %}
+
+<br/>
+
+{% if page.link %}
+	<h3>Links</h3>
+	{% for link in page.links %}
+		<p>{{ link.name }} &#10095; <a href="{{ link.link }}">{{ link.display-link }}</a></p>
+	{% endfor %}
+
+	<br/>
+{% endif %}

@@ -4,11 +4,13 @@ published:		true
 title:  		"Hyper Space Racer"
 date:   		2016-01-20 12:00:00 +0000
 category: 		"game ggj"
-thumbnail:		"assets/posts/hyperspaceracer/preview.jpg"
-screenshots:	[
-					'/assets/posts/hyperspaceracer/screenshots/pic1.jpg',
-					'/assets/posts/hyperspaceracer/screenshots/pic2.jpg'
-				]
+preview:
+ - image: 0
+   thumb-local:			'/assets/posts/hyperspaceracer/screenshots/pic1.jpg'
+   preview-local:		'/assets/posts/hyperspaceracer/screenshots/pic1.jpg'
+ - image: 0
+   thumb-local:			'/assets/posts/hyperspaceracer/screenshots/pic2.jpg'
+   preview-local:		'/assets/posts/hyperspaceracer/screenshots/pic2.jpg'
 ---
 
 <div id="slider">

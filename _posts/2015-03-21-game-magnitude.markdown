@@ -4,11 +4,20 @@ published:		true
 title:  		"Magnitude"
 date:   		2015-03-21 12:00:00 +0000
 category: 		"game uni"
-thumbnail:		"assets/posts/magnitude/preview.jpg"
-screenshots:	[
-					'/assets/posts/magnitude/screenshots/pic1.jpg',
-					'/assets/posts/magnitude/screenshots/pic2.jpg'
-				]
+description:	"A competitive game based on players battling one another to reach the end of a wormhole first. The game features 4 player split-screen and randomly generated levels for unique play through."
+finished-on:	'January 31, 2016'
+workedon:
+ - 'Movement'
+ - 'Track generation'
+ - 'Split screen'
+ - 'Shooting'
+preview:
+ - image: 0
+   thumb-local:			'/assets/posts/magnitude/screenshots/pic1.jpg'
+   preview-local:		'/assets/posts/magnitude/screenshots/pic1.jpg'
+ - image: 0
+   thumb-local:			'/assets/posts/magnitude/screenshots/pic2.jpg'
+   preview-local:		'/assets/posts/magnitude/screenshots/pic2.jpg'
 ---
 
 <div id="slider">
