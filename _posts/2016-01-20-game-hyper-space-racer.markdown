@@ -18,6 +18,9 @@ links:
  - name:				'Global Game Jam site'
    link:				'http://globalgamejam.org/2016/games/hyper-space-race'
    display-link:		'GGJ'
+ - name:				'Download Executable Windows'
+   link:				'https://drive.google.com/file/d/0B_18loem2toJUWhibG9uUkdKQVU/view?usp=sharing'
+   display-link:		'Google Drive'
 preview:
  - image: 0
    thumb-local:			'/assets/posts/hyperspaceracer/screenshots/pic1.jpg'

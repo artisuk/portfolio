@@ -15,6 +15,10 @@ workedon:
  - 'Sourced Models/Textures'
 tech:
  - 'Unity3D'
+links:
+ - name:				'Download Executable Windows'
+   link:				'https://drive.google.com/file/d/0B_18loem2toJQkNtX0tHczlsRW8/view?usp=sharing'
+   display-link:		'Google Drive'
 preview:
  - image: 0
    thumb-local:			'/assets/posts/magnitude/screenshots/pic1.jpg'
