@@ -41,7 +41,7 @@ exclude:
   - Gemfile.lock
   - submit.sh
 
-future:           true
+future:           false
 permalink:        /blog/:year-:month-:day/:title/
 
 sass:
