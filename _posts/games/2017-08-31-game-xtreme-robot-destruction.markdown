@@ -1,33 +1,21 @@
 ---
 layout: 		game
 tag:			game
-published:		false
-title:  		'Boss Fighter'
-date:   		2017-03-30 12:00:00 +0000
-category: 		'game uni released'
-thumbnail:		'/assets/posts/bossfighter/preview.jpg'
-description:	'Boss Fighter was created on one simple premise, beating up giant robots is cool and fun. Leads our hero through 10 other worldly levels battling giant robots and hordes of evil minions!</br>
-Climb the robots, destroying their vulnerable components to bring these behemoths to their knees and save the world. The minions will do all they can to protect their robot masters using an arsenal of weapons including freeze rays and glob cannons. The hope to stand against this mighty enemy is to collect energy cells from fallen foes and use it to upgrade your armor and abilities. Upgrade to the maximum and destroy the mighty alien hoard. Good luck mighty hero!<br>
-Boss Fighter was developed at Birmingham City Universities Gamer Camp post-graduate course by a team of student artists, programmers and designers.<br><br>
-The game features:<br>
-<ul>
-<li>10 levels</li>
-<li>15 upgrade options for your power armour</li>
-<li>A variety of enemies and platform types</li>
-<li>Giant robot bosses!</li>
-</ul>'
-
-release-date:	'March 30, 2017'
+published:		true
+title:  		'Xtreme Robot Destruction'
+date:   		2017-08-31 12:00:00 +0000
+category: 		'game uni'
+thumbnail:		'/assets/posts/xrd/preview.jpg'
+description:	"Xtreme Robot Destruction, like the name suggests, is a button bashing, metal grinding street fighter where players are free to battle with their own 3 story robotic warlord. Players upgrade theses warbots with powerfull parts from the vendor. Ally yourself with one of the many faction advisors, which give specific bonuses and attributes such as damage or speed. Players fight their way to fame and fandom by gaining currency for each one of their victorious battles, either against challenging AI or heated player vs player combat. Once at the top, you will face numerous challengers who set out to take your crown, it is up to 'you' as the player to fend off these potential threats and send them back in parts to cement your legacy as the greatest robot fighter to have ever lived!"
+release-date:	'September 1, 2017'
 tech:
- - 'Cocos2dx 2.2.5'
- - 'TexturePacker'
- - 'PhysicsEditor'
- - 'Marmalade'
+ - 'PhyreEngine 3.17.0.0'
+ - 'HeatWave'
+ - 'Bullet Physics'
+ - 'PS4 SDK'
 workedon:
- - 'Menu'
- - 'UI'
- - 'Player'
- - 'Background stuff'
+ - 'Framework'
+ - 'Backend UI'
 links:
  - name:				'Playstore Link'
    link:				'https://play.google.com/store/apps/details?id=uk.ac.bcu.gamercamp.bossfighter&hl=en'

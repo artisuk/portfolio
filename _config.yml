@@ -1,5 +1,5 @@
 # jekyll serve --config _config.yml,_config_dev.yml --incremental
-# 
+#
 # jekyll serve --no-watch --config _config.yml,_config_dev.yml
 # jekyll build --watch
 # git add .
@@ -28,7 +28,7 @@ description: > # this means to ignore newlines until "baseurl:"
   showing off my latest work and what I've been up to.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://artiszinbergs.co.uk" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
+twitter_username:
 github_username:  artisuk
 
 # Build settings
@@ -41,8 +41,9 @@ exclude:
   - Gemfile.lock
   - submit.sh
 
+future:           true
 permalink:        /blog/:year-:month-:day/:title/
-  
+
 sass:
   sass_dir: _sass
 include: ['_pages']
