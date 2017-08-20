@@ -3,8 +3,8 @@ layout: page
 title: Portfolio
 permalink: /portfolio/
 ---
-<script src="{{ '/js/portfolio.js' | prepend: site.url }}"></script>
-<link rel="stylesheet" href="{{ '/css/portfolio.css' | prepend: site.url }}">
+<script src="{{ '/js/portfolio.js' | prepend: site.baseurl }}"></script>
+<link rel="stylesheet" href="{{ '/css/portfolio.css' | prepend: site.baseurl }}">
 
 <h4>Filters</h4>
 <!--<div>
@@ -25,7 +25,7 @@ permalink: /portfolio/
 	{% for game in site.tags.game %}
 			<div name="div-game" class="div-game {{ game.category }}">
 				<a name="a-game" href="{{ game.url | prepend: site.baseurl }}" >
-					<img name="img-game" src="{{ game.thumbnail | prepend: site.url }}" alt="{{ game.title }}" vertical-align=100px/>
+					<img name="img-game" src="{{ game.thumbnail | prepend: site.baseurl }}" alt="{{ game.title }}" vertical-align=100px/>
 					<p align:"center";>{{ game.title }}</p>
 				</a>
 			</div>
