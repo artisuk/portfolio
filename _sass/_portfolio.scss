@@ -3,27 +3,27 @@ $transition-type:	0.25s;
 img{
 	transition:		all $transition-type;
 	transform:		scale(0.9);
-	
+
 	filter: 		brightness(30%);
 }
 
 img:hover{
 	transform:		scale(1.0);
-	
+
 	filter: 		brightness(100%);
 }
 
 div#img-container{
 	transition:		height $transition-type;
-	
+
 	position:		relative;
 	height:			300px;
 
 	div.div-game{
 		transition:	all $transition-type;
-		
+
 		position:	absolute;
-		
+
 		a{
 			img{
 				height:		auto;
@@ -34,17 +34,17 @@ div#img-container{
 				right:		0;
 				bottom:		0;
 			}
-			
+
 
 			img:hover + p{
 				opacity:	0.0;
 				top: 		20%;
 			}
 		}
-				
+
 		p{
 			transition:	all $transition-type;
-			
+
 			pointer-events: 	none;
 			position:			absolute;
 			font-size:			1.0vw;
@@ -55,7 +55,7 @@ div#img-container{
 			text-align:			center;
 		}
 	}
-	
+
 	div.div-game.show{
 		width:			300px;
 		height:			300px;
@@ -63,16 +63,16 @@ div#img-container{
 			img{
 				width:	300px;
 			}
-			
+
 			img:hover + p{
 			}
 		}
-		
+
 		p{
 			font-size:	1.0vw;
 		}
 	}
-	
+
 	div.div-game:not(show){
 		width:		0px;
 		height:		0px;
@@ -80,11 +80,11 @@ div#img-container{
 			img{
 				width:	0px;
 			}
-			
+
 			img:hover + p{
 			}
 		}
-		
+
 		p{
 			font-size:	0.0vw;
 		}

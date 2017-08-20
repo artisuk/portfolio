@@ -8,6 +8,18 @@ body {
 	background-color: #9E1B34;
 }
 
+a.navigation,
+a.navigation:visited {
+	color: $link-color;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.navigation:hover {
+	color: $link-hover-color;
+	text-decoration: none;
+}
+
 h1,
 h2,
 h3 {
@@ -20,27 +32,10 @@ h3 {
 h1 {
 	color: $main;
 	font-size: 2.5em;
-	a,
-	a:visited {
-		text-decoration: none;
-		color: $main;
-	}
 }
 
 h2 {
 	font-size: 2em;
-}
-
-a,
-a:visited {
-	color: $link-color;
-	text-decoration: underline;
-	font-weight: bold;
-}
-
-a:hover {
-	color: $link-hover-color;
-	text-decoration: underline;
 }
 
 header {
@@ -101,8 +96,6 @@ aside {
 						&:hover,
 						&:active {
 							background: $header;
-							text-decoration: none;
-							color: $main;
 						}
 					}
 				}

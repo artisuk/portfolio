@@ -2,11 +2,10 @@
 
 div.slideshow{
 	border:					2px solid black;
-	width:					48.0vw;
-	height:					30.0vw;
+	width:					100%;
+	height:					56.25vw;
 	background-color:		black;
 }
-
 
 
 div.slideshow > div.top-main{
@@ -74,14 +73,6 @@ div.bottom-thumb > img.bottom-thumb-image{
 .full-size{
 	width:					100%;
 	height:					100%;
-}
-
-a.link-link, a.link-link:visited{
-	color:					black;
-}
-
-a.link-link:hover{
-	color:					grey;
 }
 
 button.side-button{

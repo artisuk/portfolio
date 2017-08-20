@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/css/codepost.css' }}">
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+
+<h2>{{ page.title }}</h2>
+
+{{ page.content }}
+
+<br/>
+<h4>Downloads</h4>
+{% for down in page.downloadables %}
+	<a id="code" href={{ down.link | prepend: site.baseurl }} >
+		<p>{{ down.name }}</p>
+	</a>
+{% endfor %}
+
+<br/>
+<p>You can freely take this code and use it for your own purposes with no limitations.</p>
+<br/>

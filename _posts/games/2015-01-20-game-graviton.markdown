@@ -1,10 +1,11 @@
 ---
-layout: 		post
+layout: 		game
+tag:			game
 published:		true
 title:  		'Graviton'
 date:   		2015-01-20 12:00:00 +0000
 category: 		'game ggj'
-thumbnail:		'assets/posts/graviton/preview.jpg'
+thumbnail:		'/assets/posts/graviton/preview.jpg'
 description:	'Graviton is based around a space maintenance robot who must manipulate gravity to solve challenges and puzzles. The player starts off with gravity boots which allows them to traverse levels utilising slopes to change the direction of gravity. After finishing each level a new space-time manipulating ability is introduced to add more variation to the game. Such as: Anti-grav jump (inverting gravity at will), and Graviton bomb (Attracting physics objects using a localised gravity well).'
 finished-date:	'January 30, 2015'
 workedon:

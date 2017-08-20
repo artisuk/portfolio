@@ -1,10 +1,11 @@
 ---
-layout: 		post
+layout: 		game
+tag:			game
 published:		true
 title:  		'Magnitude'
 date:   		2015-03-21 12:00:00 +0000
 category: 		'game uni'
-thumbnail:		'assets/posts/magnitude/preview.jpg'
+thumbnail:		'/assets/posts/magnitude/preview.jpg'
 description:	'Magnitude is a Competitive multiplayer FPS, based around the concept of classic shooters from the late 90’s, but with a few modern twists.'
 finished-date:	'April 01, 2015'
 workedon:

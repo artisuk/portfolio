@@ -1,10 +1,11 @@
 ---
-layout: 		post
+layout: 		game
+tag:			game
 published:		true
 title:  		'Boss Fighter'
 date:   		2017-03-30 12:00:00 +0000
 category: 		'game uni released'
-thumbnail:		'assets/posts/bossfighter/preview.jpg'
+thumbnail:		'/assets/posts/bossfighter/preview.jpg'
 description:	'Boss Fighter was created on one simple premise, beating up giant robots is cool and fun. Leads our hero through 10 other worldly levels battling giant robots and hordes of evil minions!</br>
 Climb the robots, destroying their vulnerable components to bring these behemoths to their knees and save the world. The minions will do all they can to protect their robot masters using an arsenal of weapons including freeze rays and glob cannons. The hope to stand against this mighty enemy is to collect energy cells from fallen foes and use it to upgrade your armor and abilities. Upgrade to the maximum and destroy the mighty alien hoard. Good luck mighty hero!<br>
 Boss Fighter was developed at Birmingham City Universities Gamer Camp post-graduate course by a team of student artists, programmers and designers.<br><br>

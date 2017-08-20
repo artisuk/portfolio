@@ -1,0 +1,21 @@
+---
+layout: page
+title: News Feed
+permalink: /
+---
+<script src="{{ '/js/news.js' | prepend: site.baseurl }}"></script>
+<link rel="stylesheet" href="{{ '/css/news.css' | prepend: site.baseurl }}">
+
+<div>
+	{% for news in site.tags.news %}
+		<a id="news" href={{ news.url | prepend: site.baseurl }} >
+			<h3>{{ news.date | date: '%B %d, %Y' }} - {{ news.name }}</h3>
+		</a>
+		<div id="post-content">
+				{{ news.content | truncate: 500 }}
+			<br/>
+		</div>
+	{% endfor %}
+</div>
+
+<br/>
