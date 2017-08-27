@@ -20,7 +20,7 @@ workedon:
 links:
  - name:        'FaceBook page'
    link:        'https://www.facebook.com/Xtreme-Robot-Destruction-1599190306799011/'
-   display-link: 'Facebook page'
+   display-link: 'FaceBook page'
 preview:
  - video: 0
    thumb-external:		'https://img.youtube.com/vi/tY_RQwk_53o/1.jpg'

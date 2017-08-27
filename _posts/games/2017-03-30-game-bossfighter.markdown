@@ -29,7 +29,7 @@ workedon:
  - 'Player'
  - 'Background stuff'
 links:
- - name:				'Playstore Link'
+ - name:				'PlayStore Link'
    link:				'https://play.google.com/store/apps/details?id=uk.ac.bcu.gamercamp.bossfighter&hl=en'
    display-link:		'PlayStore Link'
 preview:
