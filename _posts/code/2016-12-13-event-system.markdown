@@ -1,12 +1,12 @@
 ---
 layout: 				code
-tag:					code
-published:				true
-name:					'Event System'
+tag:					  code
+published:			true
+name:					  'Event System'
 date:   				2016-12-13 12:00:00 +0000
 downloadables:
   - name: EventSystem.zip
-    link: /assets/code/eventsystem/eventsystem.zip
+    link: /assets/code/eventsystem/EventSystem.zip
 ---
 <p>This is an event system that was given to me as an assignment while I was at Gamer Camp.</p>
 <p>The purpose of it was to be an easy to implement a system that would allow to get and send events between different objects. My goal was to make the system as flexible as possible. This entailed implementing a system that would accept any number of arguments, and any type of arguments. Thanks to c++11, the variadic templates was the answer to this conundrum.</p>
